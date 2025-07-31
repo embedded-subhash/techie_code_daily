@@ -1,0 +1,14 @@
+techie_code_daily/
+├── C_Programming/
+│   ├── Basics/
+│   ├── Twisted_Problems/
+│   └── Pattern_Problems/
+├── Data_Structures/
+│   ├── Arrays/
+│   ├── LinkedLists/
+│   └── Stacks_Queues/
+├── Algorithms/
+│   ├── Sorting/
+│   └── Searching/
+├── Bit_Manipulation/
+├── Prime_Number_Logic
