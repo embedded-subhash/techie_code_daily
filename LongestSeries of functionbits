@@ -1,0 +1,54 @@
+#include <stdio.h>
+void printBinary(int data,int posn,int cnt)
+{
+    int bit;
+    for(bit=31;bit>=0;bit--)
+    {
+        if((bit>posn) || (cnt==0))
+                printf("%d",(data>>bit)&1);
+        else
+                {
+                printf("\033[1;31m%d\033[0m",(data>>bit)&1);
+                cnt--;
+                }
+    }        
+printf("\n");    
+}
+int main()
+{
+    int data,bit;
+    int longestCount=0,longestPosn=-1,curLongestPosn=-1,curLongestCount=0;
+    printf("Enter int data:");
+    scanf("%d",&data);
+    bit=31;while(bit>=0){printf("%d",(data>>bit)&1);--bit;}
+    printf("\n");
+    //printf("\033[1;31mWELCOME TO OPENGENUS\033[0m\n");
+    bit=31;
+    while(bit>=0)
+    {
+        if((data>>bit)&1)
+        {
+            curLongestPosn=bit;
+            curLongestCount=0;
+            while((bit>=0)&&((data>>bit)&1))
+            {
+                
+                    curLongestCount++;    
+                    
+            --bit;        
+                
+            }
+            if(curLongestCount >  longestCount)
+            {
+                longestCount=curLongestCount;
+                longestPosn=curLongestPosn;
+            }
+        }
+        
+    --bit;    
+    }
+    printf("longestCount=%d at %d\n",longestCount,longestPosn);
+    printBinary(data,longestPosn,longestCount);
+    return 0;
+}
+
